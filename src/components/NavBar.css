@@ -5,8 +5,9 @@ nav{
     
 }
 
+
 .nav-item{
-    text-align: center;
+ align-items: center;
 }
 
 .App-logo {
