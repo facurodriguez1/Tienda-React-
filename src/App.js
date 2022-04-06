@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ClassCounter from './components/classCounter';
 import Counter from './components/count';
 import { useState } from 'react';
+import './components/Item.css'
 
 const App = () => {
   const [show, setShow] = useState(true)
@@ -18,8 +19,11 @@ const App = () => {
       
         <NavBar/>
         <div className='contenido'>
-         <ItemListContainer greeting= {"Hola, estamos construyendo el sitio."}/>
-         <button onClick={() => setShow(!show)}>{show ? 'Desmontar contador' : 'Montar contador'}</button>
+         <div className='productsContent'>
+           <ItemListContainer greeting= {"Hola, estamos construyendo el sitio."}/>
+         </div>
+
+         {/* <button onClick={() => setShow(!show)}>{show ? 'Desmontar contador' : 'Montar contador'}</button> */}
          { show ? <Counter initial={0} stock={10} onAdd={handleOnAdd}/> : null }
          </div>
        </div>

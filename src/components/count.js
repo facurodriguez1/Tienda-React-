@@ -4,7 +4,7 @@ import './count.css'
 const Counter = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState(0)
  
-    useEffect(() => {
+  /*   useEffect(() => {
         console.log('Se acaba de montar el componente')
         let isActive = true
 
@@ -23,21 +23,21 @@ const Counter = ({initial, stock, onAdd}) => {
     useEffect(() => {
         console.log('cambio el count')
     }, [count])
-
+ */
 
     const decrement = () => {
-        if(count>0){
+        if(count>initial){
         setCount(count - 1)
         }
     }
 
     const increment = () => {
-        if(count<10){
+        if(count<stock){
         setCount(count + 1)
         }
     }
 
-    console.log('Esto esta en el cuerpo del componente')
+    //console.log('Esto esta en el cuerpo del componente')
     return(
         <div className='count'>
             <div className='contador'>
