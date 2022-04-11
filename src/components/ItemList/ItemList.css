@@ -1,3 +1,6 @@
+.contenido{
+    margin: 0;
+  }
 .productsContent{
     display: flex;
     flex-wrap: wrap;    
