@@ -3,27 +3,7 @@ import './count.css'
 
 const Counter = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState(0)
- 
-  /*   useEffect(() => {
-        console.log('Se acaba de montar el componente')
-        let isActive = true
 
-        setTimeout(() => {
-            if(isActive) {
-                setCount(10)       
-            }
-        }, 3000)
-
-        return (() => {
-            isActive = false
-            console.log('Esto se ejecuta antes de desmontar el componente')
-        })
-    })
-
-    useEffect(() => {
-        console.log('cambio el count')
-    }, [count])
- */
 
     const decrement = () => {
         if(count>initial){

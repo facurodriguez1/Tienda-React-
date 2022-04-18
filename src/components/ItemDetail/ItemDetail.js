@@ -1,7 +1,36 @@
 import './ItemDetail.css'
+import { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+
+const InputCount = ({onConfirm, stock, initial=1}) => {
+    const [count, setCount] = useState(initial)
+    console.log(stock)
+    const handleChange = (e) => {
+
+        if(e.target.value <= stock)
+        {
+            setCount(e.target.value)
+        }
+    }
+
+    return (
+        <div>
+            <input type='number' onChange={handleChange} value={count}/>
+            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
+        </div>
+    )
+}
+
 
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+    const [quantity, setQuantity] = useState (0)
+    const Count = InputCount
+
+    const handleAdd = (count) => {
+        console.log ('Se agregó al carrito')
+        setQuantity (count)
+    }
     return (
         <article className="productos">
           
@@ -23,7 +52,10 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
                 <p className="">
                     Precio: {price}
                 </p>
-            </section>           
+            </section>   
+            <footer>
+              { quantity > 0 ? <Link to = '/cart'>Ir al carrito</Link>:<Count onConfirm={handleAdd} stock={stock}/>}
+            </footer>        
              
         </article>
     )
