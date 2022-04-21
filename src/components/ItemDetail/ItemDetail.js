@@ -1,9 +1,12 @@
 import './ItemDetail.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import CartContext from '../context/CartContext'
+import Counter from '../Counter/Counter'
 
 
-const InputCount = ({onConfirm, stock, initial=1}) => {
+
+/* const InputCount = ({onConfirm, stock, initial=1}) => {
     const [count, setCount] = useState(initial)
     console.log(stock)
     const handleChange = (e) => {
@@ -21,19 +24,21 @@ const InputCount = ({onConfirm, stock, initial=1}) => {
         </div>
     )
 }
+ */
 
 
-
-const ItemDetail = ({ id, name, img, category, description, price, stock, setCart, cart }) => {
+const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
     const [quantity, setQuantity] = useState (0)
-    const Count = InputCount
+    // const Count = InputCount
 
+   const{addItem} = useContext(CartContext)
+    
     const handleAdd = (count) => {
         console.log ('Se agregó al carrito')
         const objProd ={
-            id, name, price, quantity
+            id, name, price
         }
-        setCart([...cart, objProd])
+        addItem({...objProd, quantity:count})
         setQuantity (count)
     }
     return (
@@ -59,7 +64,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock, setCar
                 </p>
             </section>   
             <footer>
-              { quantity > 0 ? <Link to = '/cart'>Ir al carrito</Link>:<Count onConfirm={handleAdd} stock={stock}/>}
+              { quantity > 0 ? <Link to = '/cart'>Ir al carrito</Link>:<Counter onAdd={handleAdd} stock={stock}/>}
             </footer>        
              
         </article>
