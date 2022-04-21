@@ -1,6 +1,7 @@
 import './ItemDetail.css'
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 const InputCount = ({onConfirm, stock, initial=1}) => {
     const [count, setCount] = useState(initial)
@@ -23,12 +24,16 @@ const InputCount = ({onConfirm, stock, initial=1}) => {
 
 
 
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, name, img, category, description, price, stock, setCart, cart }) => {
     const [quantity, setQuantity] = useState (0)
     const Count = InputCount
 
     const handleAdd = (count) => {
         console.log ('Se agregó al carrito')
+        const objProd ={
+            id, name, price, quantity
+        }
+        setCart([...cart, objProd])
         setQuantity (count)
     }
     return (
