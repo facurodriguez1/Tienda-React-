@@ -5,7 +5,8 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { CartContextProvider } from './components/context/CartContext';
-// export const Context =  createContext()
+import {NotificationProvider} from './components/Notification/Notification'
+import Cart from './components/Cart/Cart';
 
 
 
@@ -17,6 +18,7 @@ const App = () => {
       <div className="App">
       {/* <Context.Provider value={{cart, setCart}}> */}
       <CartContextProvider>
+        <NotificationProvider>
         <BrowserRouter>
           <NavBar />
         
@@ -25,10 +27,12 @@ const App = () => {
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
             <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
             <Route path='*' element={<h1>NOT FOUND 404</h1>}/>
+            <Route path='/cart' element={<Cart />} />
           </Routes>
         </BrowserRouter>
+        </NotificationProvider>
         </CartContextProvider>
-        {/* </Context.Provider> */}
+    
         
         </div>
     

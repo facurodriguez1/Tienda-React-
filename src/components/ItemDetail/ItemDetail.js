@@ -3,35 +3,17 @@ import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CartContext from '../context/CartContext'
 import Counter from '../Counter/Counter'
+import { useNotification } from '../Notification/Notification'
 
 
-
-/* const InputCount = ({onConfirm, stock, initial=1}) => {
-    const [count, setCount] = useState(initial)
-    console.log(stock)
-    const handleChange = (e) => {
-
-        if(e.target.value <= stock)
-        {
-            setCount(e.target.value)
-        }
-    }
-
-    return (
-        <div>
-            <input type='number' onChange={handleChange} value={count}/>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
-        </div>
-    )
-}
- */
 
 
 const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
     const [quantity, setQuantity] = useState (0)
-    // const Count = InputCount
+
 
    const{addItem} = useContext(CartContext)
+   const { setNotification } = useNotification()
     
     const handleAdd = (count) => {
         console.log ('Se agregó al carrito')
@@ -40,6 +22,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
         }
         addItem({...objProd, quantity:count})
         setQuantity (count)
+        setNotification('error', `Se agregaron ${count} ${name} correctamente`)
     }
     return (
         <article className="productos">

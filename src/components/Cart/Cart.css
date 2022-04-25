@@ -1,0 +1,21 @@
+.cart{
+    display: flex;
+    justify-content: center;
+
+    
+}
+.cart2{
+    
+    display: flex;
+    align-content: space-between;
+}
+
+.cartContainer{
+    background-color: orange;
+    color: white;
+    margin: auto;
+    width: 50%;
+    height: 800px;
+    
+
+}
