@@ -8,7 +8,7 @@ import { useNotification } from '../Notification/Notification'
 
 
 
-const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
+const ItemDetail = ({ id, name, img, category, artist, price, stock}) => {
     const [quantity, setQuantity] = useState (0)
 
 
@@ -37,10 +37,10 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
             </picture>
             <section>
                 <p className="">
-                    Categoria: {category}
+                    Artista: {artist}
                 </p>
                 <p className="">
-                    Descripción: {description}
+                    Categoria: {category}
                 </p>
                 <p className="">
                     Precio: {price}

@@ -13,25 +13,24 @@ import voxdei from './img/voxdei.jpg'
 
 
 const products = [
-    {id: '1', name: 'Dark Side of the Moon', price: 28000,description:`descripcion del disco`, category: 'internacional', img: floyd, stock: 3},
-    {id: '2', name: 'In Rainbows', price: 20000,description:`descripcion del disco`, category: 'internacional', img: radiohead, stock: 10},
-    {id: '3', name: 'Artaud', price: 23000,description:`descripcion del disco`, category: 'nacional', img: artaud, stock: 7},
-    {id: '4', name: 'Clics Modernos', price: 18000,description:`descripcion del disco`, category: 'nacional', img: clics, stock: 15},
-    {id: '5', name: 'Bold as Love', price: 19000,description:`descripcion del disco`, category: 'internacional', img: hendrix, stock: 14},
-    {id: '6', name: 'Durazno Sangrando', price: 18000,description:`descripcion del disco`, category: 'nacional', img: durazno, stock: 12},
-    {id: '7', name: 'Siempre es Hoy', price: 15000,description:`descripcion del disco`, category: 'nacional', img: cerati, stock: 14},
-    {id: '8', name: 'Sgt. Peppers', price: 20000,description:`descripcion del disco`, category: 'internacional', img: beatles, stock: 10},
-    {id: '9', name: 'Black Sabbath', price: 21000,description:`descripcion del disco`, category: 'internacional', img: sabbath, stock: 13},
-    {id: '10', name: 'Blood Sugar Sex Magik', price: 14000,description:`descripcion del disco`, category: 'internacional', img: redHot, stock: 2},
-    {id: '11', name: 'La Grasa de las Capitales', price: 18000,description:`descripcion del disco`, category: 'nacional', img: seru, stock: 1},
-    {id: '12', name: 'La Biblia', price: 15000,description:`descripcion del disco`, category: 'nacional', img: voxdei, stock: 8}
+    {id: '1', name: 'Dark Side of the Moon', price: 28000, artist:'Pink Floyd', category: 'Internacional', img: floyd, stock: 3},
+    {id: '2', name: 'In Rainbows', price: 20000,artist:'Radiohead', category: 'Internacional', img: radiohead, stock: 10},
+    {id: '3', name: 'Artaud', price: 23000, artist:'Pescado Rabioso', category: 'Nacional', img: './img/artaud.jpg', stock: 7},
+    {id: '4', name: 'Clics Modernos', price: 18000, artist:'Charly García', category: 'Nacional', img: clics, stock: 15},
+    {id: '5', name: 'Bold as Love', price: 19000, artist:'Jimi Hendrix', category: 'Internacional', img: hendrix, stock: 14},
+    {id: '6', name: 'Durazno Sangrando', price: 18000, artist:'Invisible', category: 'Nacional', img: durazno, stock: 12},
+    {id: '7', name: 'Siempre es Hoy', price: 15000, artist:'Gustavo Cerati', category: 'Nacional', img: cerati, stock: 14},
+    {id: '8', name: 'Sgt. Peppers', price: 20000, artist:'The Beatles', category: 'Internacional', img: beatles, stock: 10},
+    {id: '9', name: 'Black Sabbath', price: 21000, artist:'Black Sabbath', category: 'Internacional', img: sabbath, stock: 13},
+    {id: '10', name: 'Blood Sugar Sex Magik', price: 14000,artist:'Red Hot Chilli Peppers', category: 'Internacional', img: redHot, stock: 2},
+    {id: '11', name: 'La Grasa de las Capitales', price: 18000, artist:'Serú Girán', category: 'Nacional', img: seru, stock: 1},
+    {id: '12', name: 'La Biblia', price: 15000, artist:'Vox Dei', category: 'Nacional', img: voxdei, stock: 8}
    
 ]
 
 const categories = [
     {id: 'internacional', description: 'internacional'},
-    {id: 'nacional', description: 'nacional'},
-    {id: 'contacto', description: 'contacto'}
+    {id: 'nacional', description: 'nacional'}
     
 ] 
 
