@@ -19,9 +19,9 @@ const Cart = () => {
         const objOrder = {
             items: cart,
             buyer: {
-                name: 'Sebastian Zuviria',
+                name: 'Facundo Rodríguez',
                 phone: '123456789',
-                email: 'szvuria@gmail.com'
+                email: 'facundo@gmail.com'
             },
             total: getTotal(),
             date: new Date()
@@ -70,17 +70,19 @@ const Cart = () => {
 
     if(getQuantity() === 0) {
         return (
-            <h1>No hay items en el carrito</h1>
+            <h1>No hay productos en el carrito</h1>
         )
     }
 
     return (     
-        <div>
-            <h1>Cart</h1>
+        <div className="carrito">
+            <h1>Carrito</h1>
             { cart.map(p => <CartItem key={p.id} {...p}/>) }
             <h3>Total: ${getTotal()}</h3>
+            <div className="botones">
             <button onClick={() => clearCart()} className="Button">Limpiar carrito</button>
             <button onClick={() => createOrder()} className="Button">Generar Orden</button>
+            </div>
 
         </div>
     )

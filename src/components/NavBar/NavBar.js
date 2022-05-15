@@ -8,6 +8,7 @@ import { firestoreDb } from '../../services/firebase'
 import { getDocs,  collection, orderBy, query } from 'firebase/firestore'
 
 
+
 const NavBar = () => {
   const [categories, setCategories] = useState([])
 
@@ -34,7 +35,7 @@ const NavBar = () => {
         <img src={logoVinilo} className="App-logo" alt="logo" />
         <Link  to='/'>
        
-            <h3>Tienda</h3>
+            <h3 className='titulo' >ViniloShop</h3>
         </Link>
 
 

@@ -6,6 +6,14 @@
   height: 60px;
   background: black;
 }
+.titulo{
+ text-decoration: none;
+  color: white;
+  font-family: 'Anton', sans-serif;
+}
+a{
+  text-decoration: none;
+}
 .App-logo {
   height: 10vmin;
   pointer-events: none;
@@ -36,7 +44,7 @@
   margin: 0 50px;
   width: auto;
   padding: 12px;
-  font-size: 8px;
+  font-size: 12px;
   background: orange;
   border-radius: 8px;
   flex: none;
@@ -59,10 +67,9 @@
   text-decoration: none;
   border-radius: 25;
   margin: 0 50px;
-  
   width: auto;
   padding: 12px;
-  font-size: 8px;
+  font-size: 12px;
   background: red;
   border-radius: 8px;
   flex: none;
