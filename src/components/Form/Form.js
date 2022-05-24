@@ -22,11 +22,13 @@ const Form = () => {
         <form onSubmit={handleSubmit}>
             <input type='text' 
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown} 
+                onKeyDown={handleKeyDown}
+                placeholder='name' 
             />
              <input type='text' 
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={handleKeyDown} 
+                placeholder='email'
             />
             <button type='submit'>submit</button>
         </form>
