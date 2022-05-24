@@ -4,13 +4,16 @@ import CartItem from "../CartItem/CartItem"
 import "./Cart.css"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc} from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
+import Form from "../Form/Form"
+
 
 
 const Cart = () => {
     const [loading, setLoading] = useState(false)
 
-    const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)  
+    const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)
 
+  
    
 
     const createOrder = () => {
@@ -19,9 +22,8 @@ const Cart = () => {
         const objOrder = {
             items: cart,
             buyer: {
-                name: 'Facundo Rodríguez',
-                phone: '123456789',
-                email: 'facundo@gmail.com'
+                name: '',
+                email: ''
             },
             total: getTotal(),
             date: new Date()
@@ -34,6 +36,11 @@ const Cart = () => {
         const collectionRef = collection(firestoreDb, 'products')
 
         const outOfStock = []
+
+
+    
+
+   
 
         getDocs(query(collectionRef, where(documentId(), 'in', ids)))
             .then(response => {
@@ -82,6 +89,8 @@ const Cart = () => {
             <div className="botones">
             <button onClick={() => clearCart()} className="Button">Limpiar carrito</button>
             <button onClick={() => createOrder()} className="Button">Generar Orden</button>
+            <Form/>
+
             </div>
 
         </div>
